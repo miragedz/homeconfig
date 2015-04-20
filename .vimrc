@@ -49,6 +49,11 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 set guifont=DejaVu\ Sans\ Mono
 set laststatus=2
 
+" Ajout de la configuration pour la coloration de la ligne 
+" ref: http://choorucode.com/2013/02/17/how-to-install-and-use-vim-powerline-plugin-for-vim/
+set t_Co=256
+let g:Powerline_symbols = "fancy"
+
 " ############################  "
 " END   powerline 	 	"
 " ############################  "
