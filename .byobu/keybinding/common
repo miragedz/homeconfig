@@ -1,0 +1,5 @@
+#source $BYOBU_PREFIX/share/byobu/keybindings/f-keys.screen.disable
+#source $BYOBU_PREFIX/share/byobu/keybindings/f-keys.screen
+
+source $BYOBU_CONFIG_DIR/keybinding/f-keys.screen.disable
+source $BYOBU_CONFIG_DIR/keybinding/f-keys.screen
