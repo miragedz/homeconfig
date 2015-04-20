@@ -72,6 +72,20 @@ Bundle 'scrooloose/nerdtree'
 " Press F2 in vim and it will take you to the current working directory
 map <F2> :NERDTreeToggle<CR>
 
+" ########################### "
+" Utilisation des TAB - Besoin de VIM 7 "
+" ########################### "
+
+" Press F3 in vim To go to the Previous TAB
+map <F3> :tabprevious <CR>
+
+" Press F4 in vim to Open New TAB
+map <F4> :tabnew<CR>
+
+" Press F5 in vim To go to the Next TAB
+map <F5> :tabnext <CR>
+
+
 " ############################  "
 " Python-mode 		
 " ############################  "
