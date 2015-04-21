@@ -158,6 +158,107 @@ let g:pymode_folding = 1
 " END - syntastic
 " ############################ "
 
+" ############################ "
+" puppet-vim                   " 
+" ############################ "
+
+Bundle "puppetlabs/puppet-syntax-vim"
+
+
+" ############################ "
+" END - puppet-vim             "
+" ############################ "
+
+" ############################ "
+" taglist
+" ############################ "
+ Bundle 'vim-scripts/taglist.vim'
+
+" Press t in vim and it will show tag list
+map t :TlistToggle<CR>
+
+" ############################ "
+" END - taglist
+" ############################ "
+
+" ############################ "
+" grep
+" ############################ "
+ Bundle 'vim-scripts/grep.vim'
+
+" ############################ "
+" END - grep
+" ############################ "
+
+" ############################ "
+" color scheme
+" ############################ "
+" PROB : 
+" 
+" Les commmantaire pas assez distinct
+"Bundle 'tomasr/molokai'
+"set background=dark
+"let g:rehash256 = 1
+"colorscheme molokai
+
+" Les commmantaire pas assez distinct
+" Bundle 'vim-scripts/The-Vim-Gardener'
+" colorscheme gardener
+
+" J'aime pas le backgroup Gris
+" Bundle 'w0ng/vim-hybrid'
+"  colorscheme hybrid
+
+" Boff 
+" Bundle 'vim-scripts/256-grayvim'
+" colorscheme 256-grayvim
+
+" Boff
+" Bundle 'vim-scripts/rdark-terminal'
+" colorscheme rdark-terminal
+
+
+" Pas mal
+" Bundle 'jonathanfilip/vim-lucius'
+" colorscheme lucius
+" LuciusBlack
+" let g:lucius_use_bold = 9
+
+" J'aime pas le backgroud gris !
+"Bundle 'carlson-erik/wolfpack'
+" colorscheme wolfpack
+
+" Bien pour python mais boff pour le reste
+" Bundle 'yantze/pt_black'
+" colorscheme pt_black
+
+" un peu sombre :( 
+" Bundle 'vim-scripts/twilight256.vim'
+" colorscheme twilight256
+
+" J'aime BIEN
+Bundle 'vim-scripts/tchaba'
+" colorscheme tchaba2
+
+" Full contraste interaissant !!
+Bundle 'vim-scripts/miko'
+colorscheme miko
+
+Bundle 'vim-scripts/moria'
+"colorscheme moria
+"let moria_style = 'dark'
+
+Bundle 'nanotech/jellybeans.vim'
+" set t_Co=256
+" set background=dark
+" colorscheme jellybeans
+" let s:termBlack = "Black"
+
+
+" ############################ "
+" END - color scheme
+" ############################ "
+
 " enable code folding. type ‘za’ to open and close a fold.
 set foldmethod=indent
 set foldlevel=99
@@ -171,6 +272,7 @@ set autochdir
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
 
 " more subtle popup colors 
 if has ('gui_running')
