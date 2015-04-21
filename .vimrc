@@ -151,6 +151,32 @@ map t :TlistToggle<CR>
 " END - taglist
 " ############################ "
 
+" ############################ "
+" grep
+" ############################ "
+ Bundle 'vim-scripts/grep.vim'
+
+" ############################ "
+" END - grep
+" ############################ "
+
+" ############################ "
+" color scheme
+" ############################ "
+ Bundle 'tomasr/molokai'
+
+"let g:rehash256 = 1
+" colorscheme molokai
+
+Bundle 'w0ng/vim-hybrid'
+" colorscheme hybrid
+
+Bundle 'jonathanfilip/vim-lucius'
+colorscheme lucius
+
+" ############################ "
+" END - color scheme
+" ############################ "
 " enable code folding. type ‘za’ to open and close a fold.
 set foldmethod=indent
 set foldlevel=99
