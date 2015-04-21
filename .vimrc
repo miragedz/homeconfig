@@ -152,7 +152,7 @@ let g:pymode_folding = 1
  let g:syntastic_always_populate_loc_list = 0
  let g:syntastic_auto_loc_list = 0
  let g:syntastic_check_on_open = 0
- let g:syntastic_check_on_wq = 0
+ let g:syntastic_check_on_wq = 1
 
 " ############################ "
 " END - syntastic
@@ -163,7 +163,14 @@ let g:pymode_folding = 1
 " ############################ "
 
 Bundle "puppetlabs/puppet-syntax-vim"
+au BufRead,BufNewFile *.pp              set filetype=puppet
+" Bundle "netdata/vim-puppet"
 
+
+"set shellcmdflag=-ic
+set kp=pi
+set tags=./tags
+set iskeyword=-,:,@,48-57,_,192-255
 
 " ############################ "
 " END - puppet-vim             "
