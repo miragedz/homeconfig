@@ -49,6 +49,11 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 set guifont=DejaVu\ Sans\ Mono
 set laststatus=2
 
+" Ajout de la configuration pour la coloration de la ligne 
+" ref: http://choorucode.com/2013/02/17/how-to-install-and-use-vim-powerline-plugin-for-vim/
+set t_Co=256
+let g:Powerline_symbols = "fancy"
+
 " ############################  "
 " END   powerline 	 	"
 " ############################  "
@@ -66,6 +71,20 @@ Bundle 'scrooloose/nerdtree'
 
 " Press F2 in vim and it will take you to the current working directory
 map <F2> :NERDTreeToggle<CR>
+
+" ########################### "
+" Utilisation des TAB - Besoin de VIM 7 "
+" ########################### "
+
+" Press F3 in vim To go to the Previous TAB
+map <F3> :tabprevious <CR>
+
+" Press F4 in vim to Open New TAB
+map <F4> :tabnew<CR>
+
+" Press F5 in vim To go to the Next TAB
+map <F5> :tabnext <CR>
+
 
 " ############################  "
 " Python-mode 		
@@ -133,7 +152,7 @@ let g:pymode_folding = 1
  let g:syntastic_always_populate_loc_list = 0
  let g:syntastic_auto_loc_list = 0
  let g:syntastic_check_on_open = 0
- let g:syntastic_check_on_wq = 0
+ let g:syntastic_check_on_wq = 1
 
 " ############################ "
 " END - syntastic
@@ -145,6 +164,13 @@ let g:pymode_folding = 1
 
 Bundle "puppetlabs/puppet-syntax-vim"
 
+au BufRead,BufNewFile *.pp              set filetype=puppet
+
+
+"set shellcmdflag=-ic
+set kp=pi
+set tags=./tags
+set iskeyword=-,:,@,48-57,_,192-255
 
 " ############################ "
 " END - puppet-vim             "
@@ -171,24 +197,6 @@ map t :TlistToggle<CR>
 " END - grep
 " ############################ "
 
-" ############################ "
-" color scheme
-" ############################ "
- Bundle 'tomasr/molokai'
-
-"let g:rehash256 = 1
-" colorscheme molokai
-
-Bundle 'w0ng/vim-hybrid'
-" colorscheme hybrid
-
-Bundle 'jonathanfilip/vim-lucius'
-colorscheme lucius
-
-" ############################ "
-" END - color scheme
-" ############################ "
-
 
 " ########################### "
 " Utilisation des TAB - Besoin de VIM 7 "
@@ -204,9 +212,75 @@ map <F4> :tabnew<CR>
 map <F5> :tabnext <CR>
 
 
-" ############################  "
-" Python-mode 		
-" ############################  "
+" ############################ "
+" color scheme
+" ############################ "
+
+" PROB : 
+" 
+" Les commmantaire pas assez distinct
+"Bundle 'tomasr/molokai'
+"set background=dark
+"let g:rehash256 = 1
+"colorscheme molokai
+
+" Les commmantaire pas assez distinct
+" Bundle 'vim-scripts/The-Vim-Gardener'
+" colorscheme gardener
+
+" J'aime pas le backgroup Gris
+" Bundle 'w0ng/vim-hybrid'
+"  colorscheme hybrid
+
+" Boff 
+" Bundle 'vim-scripts/256-grayvim'
+" colorscheme 256-grayvim
+
+" Boff
+" Bundle 'vim-scripts/rdark-terminal'
+" colorscheme rdark-terminal
+
+
+" Pas mal
+" Bundle 'jonathanfilip/vim-lucius'
+" colorscheme lucius
+" LuciusBlack
+" let g:lucius_use_bold = 9
+
+" J'aime pas le backgroud gris !
+"Bundle 'carlson-erik/wolfpack'
+" colorscheme wolfpack
+
+" Bien pour python mais boff pour le reste
+" Bundle 'yantze/pt_black'
+" colorscheme pt_black
+
+" un peu sombre :( 
+" Bundle 'vim-scripts/twilight256.vim'
+" colorscheme twilight256
+
+" J'aime BIEN
+Bundle 'vim-scripts/tchaba'
+" colorscheme tchaba2
+
+" Full contraste interaissant !!
+Bundle 'vim-scripts/miko'
+colorscheme miko
+
+Bundle 'vim-scripts/moria'
+"colorscheme moria
+"let moria_style = 'dark'
+
+Bundle 'nanotech/jellybeans.vim'
+" set t_Co=256
+" set background=dark
+" colorscheme jellybeans
+" let s:termBlack = "Black"
+
+
+" ############################ "
+" END - color scheme
+" ############################ "
 
 " enable code folding. type ‘za’ to open and close a fold.
 set foldmethod=indent
@@ -221,6 +295,7 @@ set autochdir
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
 
 " more subtle popup colors 
 if has ('gui_running')
