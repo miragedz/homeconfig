@@ -139,6 +139,18 @@ let g:pymode_folding = 1
 " END - syntastic
 " ############################ "
 
+" ############################ "
+" taglist
+" ############################ "
+ Bundle 'vim-scripts/taglist.vim'
+
+" Press t in vim and it will show tag list
+map t :TlistToggle<CR>
+
+" ############################ "
+" END - taglist
+" ############################ "
+
 " enable code folding. type ‘za’ to open and close a fold.
 set foldmethod=indent
 set foldlevel=99
