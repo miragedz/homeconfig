@@ -140,6 +140,17 @@ let g:pymode_folding = 1
 " ############################ "
 
 " ############################ "
+" puppet-vim                   " 
+" ############################ "
+
+Bundle "puppetlabs/puppet-syntax-vim"
+
+
+" ############################ "
+" END - puppet-vim             "
+" ############################ "
+
+" ############################ "
 " taglist
 " ############################ "
  Bundle 'vim-scripts/taglist.vim'
@@ -177,6 +188,26 @@ colorscheme lucius
 " ############################ "
 " END - color scheme
 " ############################ "
+
+
+" ########################### "
+" Utilisation des TAB - Besoin de VIM 7 "
+" ########################### "
+
+" Press F3 in vim To go to the Previous TAB
+map <F3> :tabprevious <CR>
+
+" Press F4 in vim to Open New TAB
+map <F4> :tabnew<CR>
+
+" Press F5 in vim To go to the Next TAB
+map <F5> :tabnext <CR>
+
+
+" ############################  "
+" Python-mode 		
+" ############################  "
+
 " enable code folding. type ‘za’ to open and close a fold.
 set foldmethod=indent
 set foldlevel=99
