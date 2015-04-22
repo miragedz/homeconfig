@@ -87,9 +87,9 @@ map <F5> :tabnext <CR>
 
 
 " ############################  "
-" Python-mode 		
+" Python-mode - Desactive sur le EEEPC prend trop de jus
 " ############################  "
-Bundle 'klen/python-mode'
+" Bundle 'klen/python-mode'
 
 " Python-mode
 " Activate rope
@@ -104,36 +104,36 @@ Bundle 'klen/python-mode'
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
+"let g:pymode_rope = 0
 
 " Documentation
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
+"let g:pymode_doc = 1
+"let g:pymode_doc_key = 'K'
 
 " X3 - si la validation syntaxique va pas super il y a aussi
 " https://github.com/scrooloose/syntastic
 "
 "Linting
-let g:pymode_lint = 0
-let g:pymode_lint_checker = ["pep8","pyflakes"]
+"let g:pymode_lint = 0
+"let g:pymode_lint_checker = ["pep8","pyflakes"]
 " Auto check on save
-let g:pymode_lint_write = 0
+"let g:pymode_lint_write = 0
 
 " Support virtualenv
-let g:pymode_virtualenv = 1
+"let g:pymode_virtualenv = 1
 
 " Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
+"let g:pymode_breakpoint = 1
+"let g:pymode_breakpoint_bind = '<leader>b'
 
 " syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
+"let g:pymode_syntax = 1
+"let g:pymode_syntax_all = 1
+"let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+"let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 "  autofold code
-let g:pymode_folding = 1
+" let g:pymode_folding = 1
 
 " ############################  "
 " END - Python-mode 		
