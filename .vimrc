@@ -32,7 +32,7 @@ augroup vimrc_autocmds
     autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
     autocmd FileType python match Excess /\%120v.*/
     autocmd FileType python set nowrap
-    augroup END
+augroup END
 
 " ############################  "
 " powerline - Status bar 
@@ -143,16 +143,18 @@ map <F5> :tabnext <CR>
 " syntastic
 " ############################ "
 
- Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 
- set statusline+=%#warningmsg#
- set statusline+=%{SyntasticStatuslineFlag()}
- set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 "
- let g:syntastic_always_populate_loc_list = 0
- let g:syntastic_auto_loc_list = 0
- let g:syntastic_check_on_open = 0
- let g:syntastic_check_on_wq = 1
+" TODO : Voir pour faire ouvrir la fenetre d'erreur 
+" sur demande
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
 " ############################ "
 " END - syntastic
@@ -163,13 +165,15 @@ map <F5> :tabnext <CR>
 " ############################ "
 
 Bundle "puppetlabs/puppet-syntax-vim"
-
 au BufRead,BufNewFile *.pp              set filetype=puppet
+
+" Ajout de la validation syntaxque 
+let g:syntastic_puppet_checkers=['puppetlint']
 
 
 "set shellcmdflag=-ic
+set tags=./tags;~/
 set kp=pi
-set tags=./tags
 set iskeyword=-,:,@,48-57,_,192-255
 
 " ############################ "
@@ -178,11 +182,30 @@ set iskeyword=-,:,@,48-57,_,192-255
 
 " ############################ "
 " taglist
+" TODO : approfondir les options du site :
+" https://gist.github.com/trlinkin/6924042
 " ############################ "
- Bundle 'vim-scripts/taglist.vim'
 
+" Configuration original 
+" Bundle 'vim-scripts/taglist.vim'
 " Press t in vim and it will show tag list
-map t :TlistToggle<CR>
+" map t :TlistToggle<CR>
+
+Bundle 'vim-scripts/AutoTag'
+Bundle 'majutsushi/tagbar'
+
+map t :TagbarToggle<CR>
+let g:tagbar_type_puppet = {
+            \ 'ctagstype': 'puppet',
+            \ 'kinds': [
+            \'c:class',
+            \'s:site',
+            \'n:node',  
+            \'d:definition',
+            \'r:resource',
+            \'f:default'
+            \]
+            \}
 
 " ############################ "
 " END - taglist
@@ -191,31 +214,38 @@ map t :TlistToggle<CR>
 " ############################ "
 " grep
 " ############################ "
- Bundle 'vim-scripts/grep.vim'
+Bundle 'vim-scripts/grep.vim'
 
 " ############################ "
 " END - grep
 " ############################ "
 
+" ############################ "
+" Taklist
+" ############################ "
+Bundle 'vim-scripts/TaskList.vim'
+" map <leader>t <Plug>TaskList
 
-" ########################### "
-" Utilisation des TAB - Besoin de VIM 7 "
-" ########################### "
 
-" Press F3 in vim To go to the Previous TAB
-map <F3> :tabprevious <CR>
+" ############################ "
+" END - Tasklist
+" ############################ "
 
-" Press F4 in vim to Open New TAB
-map <F4> :tabnew<CR>
+" ############################ "
+" Revision History             "
+" ############################ "
 
-" Press F5 in vim To go to the Next TAB
-map <F5> :tabnext <CR>
+Bundle 'sjl/gundo.vim.git'
 
+map <leader>g :GundoToggle<CR>
+
+" ############################ "
+" END -  Revision History      "
+" ############################ "
 
 " ############################ "
 " color scheme
 " ############################ "
-
 " PROB : 
 " 
 " Les commmantaire pas assez distinct
@@ -296,9 +326,14 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,    case-sensitive otherwise
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
 
 " more subtle popup colors 
 if has ('gui_running')
-	highlight Pmenu guibg=#cccccc gui=bold    
+    highlight Pmenu guibg=#cccccc gui=bold    
 endif
 
