@@ -11,6 +11,7 @@ set nocompatible
 filetype off
 
 
+syntax on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -153,8 +154,11 @@ set statusline+=%*
 " sur demande
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+
+map <leader>e :Errors<CR>
+map <leader>E :lclose<CR>
 
 " ############################ "
 " END - syntastic
@@ -318,8 +322,9 @@ set foldlevel=99
 
 " Use <leader>l to toggle display of whitespace
 nmap <leader>l :set list!<CR>
+
 " automatically change window's cwd to file's dir
-set autochdir
+" set autochdir
 
 " I'm prefer spaces to tabs
 set tabstop=4
