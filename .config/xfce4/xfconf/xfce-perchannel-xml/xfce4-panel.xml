@@ -20,6 +20,15 @@
         <value type="int" value="9"/>
         <value type="int" value="2"/>
       </property>
+      <property name="background-style" type="uint" value="0"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="5461"/>
+        <value type="uint" value="5461"/>
+        <value type="uint" value="3788"/>
+        <value type="uint" value="65535"/>
+      </property>
+      <property name="background-alpha" type="uint" value="100"/>
+      <property name="autohide-behavior" type="uint" value="2"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -34,6 +43,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="owncloud"/>
+        <value type="string" value="qbittorrent"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="whiskermenu"/>

@@ -82,12 +82,12 @@ ${color d7d7d7}${voffset 3}${cpugraph cpu6 1,300}${voffset 1}${cpugraph cpu6 17,
 #..: NET & MAIL :..
 #-- CORRECT GMAIL SCRIPT TO YOUR PATH
 #--- if you use another client, use conkyEmail (uncomment #)
-${offset 10}${voffset -10}${font neuropol:size=20}  ${execpi 60 python ~/.conky/scripts/gmail.py}${font Nimbus Mono L:size=8 style=bold}  mail(s)
+#${offset 10}${voffset -10}${font neuropol:size=20}  ${execpi 60 python ~/.conky/scripts/gmail.py}${font Nimbus Mono L:size=8 style=bold}  mail(s)
 #${offset 10}  ${voffset -10}${font neuropol:size=20}  ${execi 300 conkyEmail --servertype=POP --servername=pop3.live.com --username=******** --password=******* --ssl}${font Nimbus Mono L:size=8 style=bold}  Gmail
-${offset 20}${voffset -5}${cpubar cpu6 0, 110}${voffset 2}${color1}
-${offset 10}${if_up wlan0}${color2} WiFi       Online $else ${color3}WiFi   Offline $endif
-${offset 10}${if_up eth0}${color2} Ethernet   Online $else ${color3}Eth0   Offline $endif
-${offset 17}${if_up wlan0}WiFi       ${wireless_link_qual_perc wlan0}% $else ${color3}WiFi   Offline $endif
+#${offset 20}${voffset -5}${cpubar cpu6 0, 110}${voffset 2}${color1}
+#${offset 10}${if_up wlan0}${color2} WiFi       Online $else ${color3}WiFi   Offline $endif
+#${offset 10}${if_up eth0}${color2} Ethernet   Online $else ${color3}Eth0   Offline $endif
+#${offset 17}${if_up wlan0}WiFi       ${wireless_link_qual_perc wlan0}% $else ${color3}WiFi   Offline $endif
 
 
 #..: NET TRAFFIC :..
@@ -95,7 +95,7 @@ ${color d7d7d7}${voffset 1}${cpugraph cpu6 1,200}${voffset 1}${cpugraph cpu6 17,
 ${offset 15}${if_up eth0}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed eth0}$else ${font Nimbus Mono L:size=8 style=bold}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed wlan0}$endif${font Nimbus Mono L:size=8 style=bold}
 ${offset 15}${if_up eth0}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed eth0}$else ${font Nimbus Mono L:size=8 style=bold}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed wlan0}$endif${font Nimbus Mono L:size=8 style=bold}
 ${offset 20}${voffset -1}${cpubar cpu6 0, 110}${voffset 2}${color1}
-${offset 15}${if_up ppp0} tDown   ${totaldown ppp0}$else tDown   ${totaldown wlan0}$endif
+#${offset 15}${if_up ppp0} tDown   ${totaldown ppp0}$else tDown   ${totaldown wlan0}$endif
 #
 #..: USB DEVICES :..
 #-- set for your use --
@@ -111,7 +111,7 @@ ${offset 15}${voffset 7}${if_existing /dev/sde1}${exec df -h | grep "sde1" | cut
 #-- SETTINGS FOR MPD --
 #--- if you use Exaile, uncomment commented section and comment mpd one ---
 #--- if you use other player, search setting on google :P ---
-#--- TODO X3: Remttre le systeme de MPD quand j'aurais installer l'application
+#--- TODO x3: voir pour reactiver une fois le systeme de music MPD est installer
 #${color d7d7d7}${voffset -30}${cpugraph cpu6 1,300}${voffset 1}${cpugraph cpu6 17,1}${color3}
 #${if_mpd_playing}${voffset -8}${offset 55}${voffset -2}${font neuropol:size=20}${mpd_elapsed}
 #${offset 165}${voffset -27}${font neuropol:size=14}/ ${mpd_length}
@@ -120,14 +120,14 @@ ${offset 15}${voffset 7}${if_existing /dev/sde1}${exec df -h | grep "sde1" | cut
 #${offset 55}${scroll 36 ${color 3273b5}${mpd_artist}}${color3}
 #${offset 55}${scroll 36 ${mpd_album}}
 #$else       ..:: MPD not running ::..
-### END X3
-#${if_running exaile}${voffset -8}${offset 55}${voffset -2}${font neuropol:size=20} ${exec conkyExaile --datatype=PT} ${voffset -5}${font PizzaDude Bullets:size=10}BBBBB${offset -65}${color 0778ec}${exec conkyExaile -n --datatype=RT --ratingchar=D}$color
-#${offset 55}${color3}${cpubar cpu6 0, 190}${voffset 2}${font Nimbus Mono L:size=8 style=bold}
-#${offset 55}${scroll 36 ${exec conkyExaile --datatype=TI}}
-#${offset 55}${scroll 36 ${exec conkyExaile --datatype=AR}}
-#${offset 55}${scroll 36 ${exec conkyExaile --datatype=AL}}
-#${else}       ..:: Exaile not running ::..
+##${if_running exaile}${voffset -8}${offset 55}${voffset -2}${font neuropol:size=20} ${exec conkyExaile --datatype=PT} ${voffset -5}${font PizzaDude Bullets:size=10}BBBBB${offset -65}${color 0778ec}${exec conkyExaile -n --datatype=RT --ratingchar=D}$color
+##${offset 55}${color3}${cpubar cpu6 0, 190}${voffset 2}${font Nimbus Mono L:size=8 style=bold}
+##${offset 55}${scroll 36 ${exec conkyExaile --datatype=TI}}
+##${offset 55}${scroll 36 ${exec conkyExaile --datatype=AR}}
+##${offset 55}${scroll 36 ${exec conkyExaile --datatype=AL}}
+##${else}       ..:: Exaile not running ::..
 
-$endif
+# $endif
+#--- END x3
 
 
